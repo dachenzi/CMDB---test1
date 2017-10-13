@@ -1,0 +1,104 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+    <style>
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .title {
+            height: 50px;
+            line-height: 50px;
+            color: white;
+        }
+
+        .content {
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 310px;
+            height: 200px;
+            background-color: #CDC5BF;
+            display: inline-block;
+            margin-top: 40px;
+            margin-right: 40px;
+            color: white;
+            font-family: '微软雅黑 Light';
+            font-size: 80px;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 10px 10px 10px 10px;
+            border: 1px white double;
+            box-shadow:5px 2px 6px #000;
+            transform: rotate(-3deg)
+        }
+
+        .box:hover {
+            opacity: 0.5;
+        }
+
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid title">
+        <div class="col-md-9">
+            <span class="glyphicon glyphicon-globe "
+                  aria-hidden="true">&nbsp;&nbsp;Configuration Management Platform </span>
+        </div>
+        <div class="col-md-2 col-md-offset-1 ">
+            <span>{{ request.session.username }}username</span>
+            <a href="#" style="margin-left: 20px;color: white;">logout</a>
+        </div>
+
+    </div>
+</nav>
+<div class="container-fluid content">
+    <div class="content-box col-md-10 col-md-offset-1">
+        <a href="/cmdb/nav.html" target="_blank" class="content-cmdb">
+            <div class=" box" style="background-color: #8DB6CD">
+                Monitor
+            </div>
+        </a>
+        <a href="" class="content-dns" >
+            <div class="box" style="background-color: #A2CD5A">
+                DNS
+            </div>
+        </a>
+        <a href="" class="content-network" >
+            <div class="box" style="background-color:#FF3030">
+                Network
+            </div>
+        </a>
+        <a href="" class="content-cdn" >
+            <div class="content-cdn box" style="background-color: #EEB422">
+                CDN
+            </div>
+        </a>
+        <a href="#" class="content-more">
+            <div class="content-more box" style="background-color: #EE4000">
+                More
+            </div>
+        </a>
+        <a href="#" class="content-more">
+            <div class="content-more box" style="background-color:#D15FEE">
+                More
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

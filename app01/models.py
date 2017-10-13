@@ -2,6 +2,15 @@ from django.db import models
 
 # Create your models here.
 
+class User(models.Model):
+    '''
+    登陆用户表
+    '''
+    username = models.CharField(max_length=16)
+    password = models.CharField(max_length=32)
+    role = models.CharField(max_length=16)
+    phone = models.IntegerField(null=True,blank=True,default='12345678910')
+    email = models.EmailField(null=True,blank=True,default=None)
 
 class Host(models.Model):
     '''
@@ -12,7 +21,7 @@ class Host(models.Model):
     diskinfo = models.ForeignKey('Disk')
     meminfo = models.ForeignKey('Mem')
     cpu = models.ForeignKey('Cpu')
-
+    admin = models.ForeignKey('User')
 
 class Cpu(models.Model):
     '''

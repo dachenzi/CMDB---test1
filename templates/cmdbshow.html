@@ -1,0 +1,68 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+    <style>
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .title {
+            height: 50px;
+            line-height: 50px;
+            color: white;
+        }
+
+        .navbar {
+            background-color: #3c8dbc;
+            border: 0px;
+            opacity: 0.9;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 250px;
+            background-color: #222d32;
+
+        }
+        .menu-content {
+            margin-top: 50px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid title">
+        <div class="col-md-9">
+            <span class="glyphicon glyphicon-blackboard"
+                  aria-hidden="true">&nbsp;&nbsp;Host Monitor</span>
+        </div>
+        <div class="col-md-2 col-md-offset-1 ">
+            <span>{{ request.session.username }}username</span>
+            <a href="#" style="margin-left: 20px;color: white;">logout</a>
+        </div>
+
+    </div>
+</nav>
+<div class="menu">
+    <div class="menu-content">
+
+    </div>
+</div>
+
+</body>
+</html>
